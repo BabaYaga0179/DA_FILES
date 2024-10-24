@@ -10,7 +10,7 @@ if [ ! -s tmp ]; then
 	exit
 fi
 
-NAME_FILE=`grep "da.*\.sh" tmp | cut -d'/' -f7 | cut -d'.' -f1`
+NAME_FILE="da-1624-centos8"
 
 Help()
 {
@@ -25,20 +25,20 @@ Help()
 	echo "#  \$5: Network Card (Default: hca | Or input network card attached IP Server                      #"
 	echo "#                                                                                                 #"
 	echo "#  Ex: Install DA 1604 in VPS (Do nothing)                                                        #"
-	echo "#  ./setup.sh auto server.nguyentrunghau.me admin@123                                             #"
-	echo "#  + Mode: auto | Host: server.nguyentrunghau.me | Pass: admin@123 | IP auto detect | Card: hca   #"
+	echo "#  ./setup.sh auto server.wptop.net admin@123                                             #"
+	echo "#  + Mode: auto | Host: server.wptop.net | Pass: admin@123 | IP auto detect | Card: hca   #"
 	echo "#                                                                                                 #"
 	echo "#  Ex: Install DA version > 1604 in VPS (Set network card for run)                                #"
-	echo "#  ./setup.sh auto server.nguyentrunghau.me rand detect eth0                                      #"
-	echo "#  + Mode: auto | Host: server.nguyentrunghau.me | Pass random | IP auto detect | Card: eth0      #"
+	echo "#  ./setup.sh auto server.wptop.net rand detect eth0                                      #"
+	echo "#  + Mode: auto | Host: server.wptop.net | Pass random | IP auto detect | Card: eth0      #"
 	echo "#                                                                                                 #"
 	echo "#  Ex: Install DA version > 1604 in Local Server (Set local IP and network card for run)          #"
-	echo "#  ./setup.sh auto server.nguyentrunghau.me admin@123 1.2.3.4 eth0                                #"
-	echo "#  + Mode: auto | Host: server.nguyentrunghau.me | Pass: admin@123 | IP: 1.2.3.4 | Card: eth0     #"
+	echo "#  ./setup.sh auto server.wptop.net admin@123 1.2.3.4 eth0                                #"
+	echo "#  + Mode: auto | Host: server.wptop.net | Pass: admin@123 | IP: 1.2.3.4 | Card: eth0     #"
 	echo "#                                                                                                 #"
 	echo "#  Ex: Install DA 1604 in Local Server (Set local IP for run)                                     #"
-	echo "#  ./setup.sh auto server.nguyentrunghau.me rand 1.2.3.4                                          #"
-	echo "#  + Mode: auto | Host: server.nguyentrunghau.me | Pass random | IP: 1.2.3.4 | Card: hca          #"
+	echo "#  ./setup.sh auto server.wptop.net rand 1.2.3.4                                          #"
+	echo "#  + Mode: auto | Host: server.wptop.net | Pass random | IP: 1.2.3.4 | Card: hca          #"
 	echo "#                                                                                                 #"
 	echo "###################################################################################################"
 	echo "  Your version directadmin will download: $NAME_FILE"
@@ -113,8 +113,9 @@ CB_OPTIONS=${DA_PATH}/custombuild/options.conf
 SCRIPTS_PATH=$DA_PATH/scripts
 PACKAGES=$SCRIPTS_PATH/packages
 SETUP=$SCRIPTS_PATH/setup.txt
-SERVER_SERVICES=https://raw.githubusercontent.com/irf1404/DA_REPO/master/services
-SERVER_FILES=https://raw.githubusercontent.com/irf1404/DA_FILES/master
+SERVER_SERVICES=https://raw.githubusercontent.com/BabaYaga0179/DA_REPO/master/services
+# SERVER_FILES=https://raw.githubusercontent.com/irf1404/DA_FILES/master
+SERVER_FILES=https://raw.githubusercontent.com/BabaYaga0179/DA_FILES/master
 CBPATH=$DA_PATH/custombuild
 BUILD=$CBPATH/build
 
@@ -486,7 +487,7 @@ systemctl restart directadmin >/dev/null 2>&1
 if [ $? -gt 0 ]; then
 	echo "Directadmin not working!"
 	echo "Please try config network card again!"
-	echo "https://github.com/irf1404/DA_FILES"
+	echo "https://github.com/BabaYaga0179/DA_FILES"
 fi
 
 printf \\a

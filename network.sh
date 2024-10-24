@@ -86,7 +86,7 @@ if [ "$ETH_DEV" != "" ]; then
 	if [ $? -gt 0 ]; then
 		echo "Directadmin not working!"
 		echo "Please try config network card again!"
-		echo "https://github.com/irf1404/DA_FILES"
+		echo "https://github.com/BabaYaga0179/DA_FILES"
 	fi
 
 	printf \\a

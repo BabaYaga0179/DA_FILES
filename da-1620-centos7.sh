@@ -10,7 +10,7 @@ if [ ! -s tmp ]; then
 	exit
 fi
 
-NAME_FILE=`grep "da.*\.sh" tmp | cut -d'/' -f7 | cut -d'.' -f1`
+NAME_FILE="da-1620-centos7"
 
 Help()
 {
@@ -25,20 +25,20 @@ Help()
 	echo "#  \$5: Network Card (Default: hca | Or input network card attached IP Server                      #"
 	echo "#                                                                                                 #"
 	echo "#  Ex: Install DA 1604 in VPS (Do nothing)                                                        #"
-	echo "#  ./setup.sh auto server.nguyentrunghau.me admin@123                                             #"
-	echo "#  + Mode: auto | Host: server.nguyentrunghau.me | Pass: admin@123 | IP auto detect | Card: hca   #"
+	echo "#  ./setup.sh auto server.wptop.net admin@123                                             #"
+	echo "#  + Mode: auto | Host: server.wptop.net | Pass: admin@123 | IP auto detect | Card: hca   #"
 	echo "#                                                                                                 #"
 	echo "#  Ex: Install DA version > 1604 in VPS (Set network card for run)                                #"
-	echo "#  ./setup.sh auto server.nguyentrunghau.me rand detect eth0                                      #"
-	echo "#  + Mode: auto | Host: server.nguyentrunghau.me | Pass random | IP auto detect | Card: eth0      #"
+	echo "#  ./setup.sh auto server.wptop.net rand detect eth0                                      #"
+	echo "#  + Mode: auto | Host: server.wptop.net | Pass random | IP auto detect | Card: eth0      #"
 	echo "#                                                                                                 #"
 	echo "#  Ex: Install DA version > 1604 in Local Server (Set local IP and network card for run)          #"
-	echo "#  ./setup.sh auto server.nguyentrunghau.me admin@123 1.2.3.4 eth0                                #"
-	echo "#  + Mode: auto | Host: server.nguyentrunghau.me | Pass: admin@123 | IP: 1.2.3.4 | Card: eth0     #"
+	echo "#  ./setup.sh auto server.wptop.net admin@123 1.2.3.4 eth0                                #"
+	echo "#  + Mode: auto | Host: server.wptop.net | Pass: admin@123 | IP: 1.2.3.4 | Card: eth0     #"
 	echo "#                                                                                                 #"
 	echo "#  Ex: Install DA 1604 in Local Server (Set local IP for run)                                     #"
-	echo "#  ./setup.sh auto server.nguyentrunghau.me rand 1.2.3.4                                          #"
-	echo "#  + Mode: auto | Host: server.nguyentrunghau.me | Pass random | IP: 1.2.3.4 | Card: hca          #"
+	echo "#  ./setup.sh auto server.wptop.net rand 1.2.3.4                                          #"
+	echo "#  + Mode: auto | Host: server.wptop.net | Pass random | IP: 1.2.3.4 | Card: hca          #"
 	echo "#                                                                                                 #"
 	echo "###################################################################################################"
 	echo "  Your version directadmin will download: $NAME_FILE"
